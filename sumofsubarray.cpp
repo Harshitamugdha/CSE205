@@ -16,7 +16,7 @@ int main(){
         int c=0;
        for(int j=i;j<3;j++){
            c+=arr[j];
-           cout<<c<<" ";
+           cout<<c<<endl;
 
        }
     }

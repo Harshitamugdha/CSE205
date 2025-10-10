@@ -12,15 +12,15 @@ int main(){
     //         cout<<endl;
     //     }
     //     }
+    int maxs=0;
     for(int i=0;i<3;i++){
         int c=0;
        for(int j=i;j<3;j++){
            c+=arr[j];
-           cout<<c<<endl;
-
+           if(c>maxs){
+               maxs=c;
+           }
        }
     }
+    cout<<maxs<<endl;
 }
-
-
-    

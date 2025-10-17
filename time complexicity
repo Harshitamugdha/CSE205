@@ -1,0 +1,6 @@
+10^8 -10^9 -> O(n), logn binary serach bubble sort
+10^5 -> O(nlogn) sorting
+10^4-> n^2 nested loops
+1000 -> n^3 triple nested loop
+20 -> 2^n 
+10 -> n!

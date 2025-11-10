@@ -2,7 +2,7 @@
 using namespace std;
 int Demo(){
     int a=10;
-    *p=&a;
+    int *p=&a;
 }
 int main(){
     // int m=20;

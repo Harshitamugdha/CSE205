@@ -1,27 +1,55 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int push(int *arr, int &f, int &r,int val){
-    if(r==9){
-        cout<<"Stack Overflow";
-        return -1;
+
+#define SIZE 5
+
+class Queue {
+    int arr[SIZE];
+    int front, rear;
+
+public:
+    Queue() {
+        front = rear = -1;
     }
-    if(f==-1){
-        f=0;
+
+    void enqueue(int x) {
+        if (rear == SIZE - 1) {
+            cout << "Queue Overflow\n";
+            return;
+        }
+        if (front == -1)
+            front = 0;
+        rear++;
+        arr[rear] = x;
+        cout << x << " enqueued\n";
     }
-    r++;
-    arr[r]=val;
-}
-int pop(int *arr, int &f, int &r){
-    if(f==-1 || f>r){
-        cout<<"Stack underflow";
-        return -1;
+
+    void dequeue() {
+        if (front == -1 || front > rear) {
+            cout << "Queue Underflow\n";
+            return;
+        }
+        cout << arr[front] << " dequeued\n";
+        front++;
     }
-    return arr[f];
-    f++; 
-}
-int main(){
-    int arr[10];
-    int f=-1;
-    int r=-1;
-    return 0;
+
+    void traverse() {
+        if (front == -1 || front > rear) {
+            cout << "Queue empty\n";
+            return;
+        }
+        for (int i = front; i <= rear; i++)
+            cout << arr[i] << " ";
+        cout << endl;
+    }
+};
+
+int main() {
+    Queue q;
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.traverse();
+    q.dequeue();
+    q.traverse();
 }
